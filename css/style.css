@@ -87,6 +87,7 @@ main {
 header{
     position: sticky;
     top: 0;
+    z-index: 100;
 }
 
 .logo{
@@ -172,7 +173,8 @@ header{
 }
 
 /* #### ESTILOS DE 'PRODUCTOS' #### */
-.productos main section {
+.productos main section,
+.consejos main section article {
     scroll-margin-top: 86px; /* altura del header */
 }
 
@@ -219,6 +221,62 @@ header{
 
 .producto a:hover {
     background-color: var(--button-hover-color); 
+}
+
+/* #### ESTILOS DE 'CONSEJOS' #### */
+.grid-consejos{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem
+}
+
+.indice-consejos{
+    order: 2; /* a la derecha del contenido en paginas grandes */
+    padding: 1rem;
+    border-left: 4px solid var(--button-color);
+}
+
+.indice-consejos h3{
+    font-size: 1.25rem;
+    color: var(--titles-text-color);
+    margin-bottom: 0.75rem;
+}
+
+.indice-consejos ul{
+    list-style: none;
+}
+
+.indice-consejos li {
+  margin-bottom: 0.5rem;
+}
+
+.indice-consejos li:hover {
+  background-color: var(--header-dropdown-hover-color);
+}
+
+.contenido-consejos{
+    padding: 1rem;
+}
+
+/* sobreescribimos el color que aplicó la tarjeta de bootstrap */
+.contenido-consejos .card-title{
+    color: var(--button-text-color);
+    margin: 0;
+    margin-bottom: 0.75rem;
+}
+
+/* truco para mantener proporcion 16:9 en videos */
+.marco-video{
+    aspect-ratio: 16 / 9;
+    max-width: 600px;
+    margin: 0 auto; /* centrado */
+    width: 100%;
+}
+
+.marco-video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 /* #### ESTILOS DE 'NOSOTROS' #### */
@@ -316,6 +374,23 @@ footer h4 {
         width: 80%;
     }
 }
+
+@media screen and (max-width: 780px) {
+    .grid-consejos{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .indice-consejos{
+        order: 0; /* indice sobre el contenido en paginas pequeñas */
+        padding: 1rem;
+    }
+
+    .contenido-consejos{
+        padding: 0 1rem;
+    }
+}
+
 @media screen and (max-width: 600px) {
     h1, h2 {
         font-size: 1.3rem;
@@ -345,6 +420,10 @@ footer h4 {
 
     .quienes-somos p {
         width: 100%;
+    }
+
+    .contenido-consejos p{
+        font-size: 0.9rem;
     }
 
 }

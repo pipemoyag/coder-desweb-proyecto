@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="layout">
+    <div class="layout consejos">
 
         <header>
             <!-- MENU NAVEGACION CON BOOTSTRAP -->
@@ -70,33 +70,55 @@
                 <!-- Carrito vista desktop -->
                 <a class="btn btn-custom d-none d-lg-inline ms-2" href="#">
                     <span class="d-flex align-items-center">
-                            <img class="icono icono-carrito me-1" src="../img/bolsa.png" alt="Bolsa de compra">
-                            <span>$0</span>
-                        </span>
+                        <img class="icono icono-carrito me-1" src="../img/bolsa.png" alt="Bolsa de compra">
+                        <span>$0</span>
+                    </span>
                 </a>
             </nav>
         </header>
 
         <main>
             <h1>Tips y recomendaciones para el cuidado de tu gato</h2>
-                <section><!-- Consejos Gatos -->
-                    <article>
-                        <h2>¿Cómo cortarle las garras a tu gato?</h2>
-                        <p>Recortar las garras de tu gato regularmente es una parte esencial de su cuidado. No solo
-                            protege tus muebles y evita arañazos accidentales, sino que también previene que las garras
-                            crezcan en exceso o se encarnen, lo que podría causarle dolor o infecciones. Aunque los
-                            gatos suelen limarse las uñas de forma natural al rascar, no siempre es suficiente,
-                            especialmente en gatos de interior. Este video les ayudará a aprender la técnica, y con ello
-                            incorporar un hábito que mejorará el bienestar de sus gatos</p>
-                        <br>
-                        <iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/7DFvQHa_0W8?si=ouZx8zPeHsHT0gHS"
-                            title="Video sobre como cortar uñas a tu gato" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                        </iframe>
-                    </article>
-                </section>
+                <div class="grid-consejos">
+                    <aside class="indice-consejos">
+                        <h3>Consejos</h3>
+                        <ul>
+                            <li><a href="#cortar-garras">¿Cómo cortarle las garras a tu gato?</a></li>
+                            <li><a href="#consumo-agua">Formas de fomentar el consumo de agua de tu gato</a></li>
+                        </ul>
+                    </aside>
+                    <section class="contenido-consejos">
+                        <article class="card mb-4" id="cortar-garras">
+                            <div class="card-body">
+                                <h2 class="card-title">¿Cómo cortarle las garras a tu gato?</h2>
+                                <p class="card-text mb-2">
+                                    Recortar las garras de tu gato regularmente es una parte esencial de su cuidado. No solo protege tus muebles y evita arañazos accidentales, sino que también previene que las garras crezcan en exceso o se encarnen, lo que podría causarle dolor o infecciones. Aunque los gatos suelen limarse las uñas de forma natural al rascar, no siempre es suficiente, especialmente en gatos de interior. Este video les ayudará a aprender la técnica, y con ello incorporar un hábito que mejorará el bienestar de sus gatos.
+                                </p>
+                                <div class="marco-video">
+                                    <iframe src="https://www.youtube.com/embed/7DFvQHa_0W8?si=APplg_qJ-0khsoQW"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card mb-4" id="consumo-agua">
+                            <div class="card-body">
+                                <h2 class="card-title">Formas de fomentar el consumo de agua de tu gato</h2>
+                                <p class="card-text mb-2">
+                                    El consumo de agua es fundamental para la salud de los gatos, ya que ayuda a prevenir enfermedades renales, muy comunes en felinos, especialmente a medida que envejecen. Sin embargo, muchos gatos no beben suficiente agua si solo se les ofrece en recipientes tradicionales. Las fuentes bebederas, que mantienen el agua en circulación constante, resultan más atractivas para ellos, ya que imitan el agua fresca y corriente de la naturaleza. Invertir en una de estas fuentes puede hacer una gran diferencia en su hidratación diaria y, con ello, en su bienestar general.
+                                </p>
+                                <div class="marco-video">
+                                    <iframe src="https://www.youtube.com/embed/6T8IyS6KBOg?si=SzX2bfeDHdb1sqWU"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </div>
         </main>
 
         <footer>
