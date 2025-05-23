@@ -5,6 +5,7 @@
     --header-color: #f7eac4;
     --header-dropdown-hover-color: #96b4a0;
     --main-color: #ffffff;
+    --destacadas-index-color: #f3f1e8;
     --button-color: #3b5142;
     --button-hover-color: #203233;
     --footer-color: #203233;
@@ -40,18 +41,20 @@ h1,h2,h3,h4 {
     font-weight: 700;
 }
 
-/* Formato para titulos h1 y h2 */
-h1,h2 {
+/* Estilo para los h1 */
+h1 {
     text-transform: uppercase;
     color: var(--titles-text-color);
-    font-size: 1.5rem;
+    font-size: 2.0rem;
 }
 
 /* Estilo para los h2 */
 h2 {
+    text-transform: uppercase;
     display: inline-block;
     background-color: var(--button-color);
     color: var(--button-text-color);
+    font-size: 1.5rem;
     padding: 5px 10px;
     margin: 15px 0;
     border-radius: 6px;
@@ -124,7 +127,7 @@ header{
 /* Mostrar dropdown al pasar el mouse */
 .nav-item.dropdown:hover .dropdown-menu {
   display: block;
-  margin-top: 0; /* Asegura que no haya espacio entre el botón y el menú */
+  margin-top: 0; /* que no haya espacio entre el botón y el menú */
 }
 
 /* Cambio color resto de los botones de bootstrap */
@@ -157,14 +160,17 @@ header{
 }
 
 /* #### ESTILOS DEL INDEX #### */
+/* Que index sea la unica sin padding en el main */
+.inicio main{
+    padding: 0;
+}
+
 .hero {
     text-align: center;
-    margin: 0 -15px; /* anular margen del main */
 }
 
 .hero h1 {
-    font-size: 2rem;
-    padding: 0 15px 10px 15px;
+    padding: 10px 15px;
 }
 
 .hero img {
@@ -172,10 +178,31 @@ header{
     height: auto;
 }
 
+.inicio h2{
+    margin-left: 15px;
+}
+
+.contenedor-index{
+    padding: 15px;
+    background-color: var(--destacadas-index-color);
+    background-image: url(../img/huella-rotada.png);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 60px;
+}
+
+.contenedor-index .producto{
+    transition: transform 0.3s ease;
+}
+
+.contenedor-index .producto:hover{
+    transform: scale(1.05);
+}
+
 /* #### ESTILOS DE 'PRODUCTOS' #### */
 .productos main section,
 .consejos main section article {
-    scroll-margin-top: 86px; /* altura del header */
+    scroll-margin-top: 86px; /* altura del header sticky para scroll */
 }
 
 .contenedor-productos {
@@ -186,6 +213,7 @@ header{
 }
 
 .contenedor-productos .producto {
+    background-color: var(--main-color);
     border: 1px solid black;
     width: 200px;
     height: 350px;
@@ -392,12 +420,12 @@ footer h4 {
 }
 
 @media screen and (max-width: 600px) {
-    h1, h2 {
-        font-size: 1.3rem;
+    h1{
+        font-size: 1.5rem;
     }
 
-    .hero h1 {
-        font-size: 1.5rem;
+    h2 {
+        font-size: 1.3rem;
     }
 
     .quienes-somos p {
@@ -406,11 +434,7 @@ footer h4 {
 }
 
 @media screen and (max-width: 450px) {
-    h1, h2 {
-        font-size: 1.1rem;
-    }
-
-    .hero h1 {
+    h1, h2, .indice-consejos h3 {
         font-size: 1.1rem;
     }
 
