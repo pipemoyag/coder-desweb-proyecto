@@ -185,10 +185,10 @@ header{
 .contenedor-index{
     padding: 15px;
     background-color: var(--destacadas-index-color);
-    background-image: url(../img/huella-rotada.png);
+    background-image: url(../img/huella-rotada-gris.png);
     background-repeat: repeat;
     background-attachment: fixed;
-    background-size: 60px;
+    background-size: 90px;
 }
 
 .contenedor-index .producto{
