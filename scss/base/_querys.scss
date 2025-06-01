@@ -1,0 +1,63 @@
+/* ########################### */
+/* ####### MEDIA QUERY ####### */
+/* ########################### */
+
+@media screen and (max-width: 815px) {
+    .quienes-somos{
+        img {
+            width: 350px
+        }
+        p {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .grid-consejos{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .indice-consejos{
+        order: 0; /* indice sobre el contenido en paginas pequeñas */
+        padding: 1rem;
+    }
+
+    .contenido-consejos{
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1{
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .quienes-somos p {
+        font-size: 1.0rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    h1, h2, .indice-consejos h3 {
+        font-size: 1.1rem;
+    }
+
+    .quienes-somos{
+        img {
+            min-width: 250px;
+        }
+        p {
+            width: 100%;
+        }
+    } 
+ 
+    .contenido-consejos p{
+        font-size: 0.9rem;
+    }
+}

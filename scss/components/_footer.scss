@@ -1,0 +1,37 @@
+/* ########################### */
+/* ######### FOOTER ########## */
+/* ########################### */
+
+footer {
+    background-color: color(footer);
+    color: color(footer-text);
+    @include flex(row, space-between, null, 5px, wrap);
+    padding: 5px 40px;
+    h4 {
+        font-size: 1.2rem;
+    }
+}
+
+.fixed {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    img {
+        width: 30px;
+        height: auto;
+    }
+}
+
+.footer-info ul {
+    font-size: 0.9rem;
+    padding-left: 20px;
+}
+
+.RRSS {
+    text-align: center;
+    img {
+        width: 20px;
+        height: auto;
+        margin: 0 5px;
+    }
+}

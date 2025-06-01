@@ -1,0 +1,19 @@
+{
+  "name": "proyecto",
+  "version": "1.0.0",
+  "description": "Un maquetado de página web pensando en la tienda de productos para gatos que tenemos con mi pareja",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipemoyag/coder-desweb-proyecto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pipemoyag/coder-desweb-proyecto/issues"
+  },
+  "homepage": "https://github.com/pipemoyag/coder-desweb-proyecto#readme"
+}

@@ -1,0 +1,57 @@
+// MAPA PARA COLORES DE FONDO Y TEXTOS
+$colors: (
+    header: #f7eac4,
+    header-dropdown-hover: #96b4a0,
+    main: #ffffff,
+    destacadas-index: #f3f1e8,
+    button: #3b5142,
+    button-hover: #203233,
+    footer: #203233,
+    header-text: #203233,
+    main-text: #222,
+    titles-text: #3b5142,
+    button-text: #ffffff,
+    footer-text: #f7eac4
+);
+
+// FUNCTION para facilitar llamado de colores en SASS
+@function color($name) {
+    @return map-get($colors, $name);
+}
+
+// EXTEND PARA BOTONES tanto de Bootstrap como propios
+%boton-custom {
+    background-color: color(button);
+    color: color(button-text);
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &:hover,
+    &:active{
+        background-color: color(button-hover)!important;
+        color: color(button-text)!important;
+        box-shadow: none;
+    }
+}
+
+// MIXIN PARA FLEXBOX Y GRID, con parametros por defecto
+@mixin flex($direction: row, $justify: null, $align: null, $gap: null, $wrap: null) {
+    display: flex;
+    flex-direction: $direction;
+    // Asignar valores solo cuando es distinto al por defecto
+    @if $justify { justify-content: $justify; }
+    @if $align { align-items: $align; }
+    @if $gap { gap: $gap; }
+    @if $wrap { flex-wrap: $wrap; }
+}
+
+@mixin grid($gap: null, $template: null, $justifyItems: null) {
+    display: grid;
+
+    @if $gap { gap: $gap; }
+    @if $template { grid-template-columns: $template; }
+    @if $justifyItems { justify-items: $justifyItems; }
+}

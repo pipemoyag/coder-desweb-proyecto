@@ -1,0 +1,169 @@
+/* ########################### */
+/* ########## INDEX ########## */
+/* ########################### */
+
+.inicio {
+    main {
+        /* Que index sea la unica sin padding en el main */
+        padding: 0;
+    }
+    h2 {
+        margin-left: 15px;
+    }
+}
+
+.hero {
+    text-align: center;
+    h1 {
+        padding: 10px 15px;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.contenedor-index{
+    padding: 15px;
+    background-color: color(destacadas-index);
+    background-image: url(../img/huella-rotada-gris.png);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 90px;
+    .producto{
+        transition: transform 0.3s ease;
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+}
+
+/* ########################### */
+/* ######## PRODUCTOS ######## */
+/* ########################### */
+
+.productos main section,
+.consejos main section article {
+    scroll-margin-top: 86px; /* altura del header sticky para scroll */
+}
+
+.contenedor-productos {
+    /* cantidad automatica columnas, para responsive */
+    @include grid(15px, repeat(auto-fit, minmax(200px, 1fr)), center);
+    .producto {
+        background-color: color(main);
+        border: 1px solid black;
+        width: 200px;
+        height: 350px;
+        @include flex(column, space-between, center);
+        padding: 10px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+        h3 {
+            font-size: 1.0rem;
+            text-align: center;
+        }
+        a {
+            /* "Botón" Comprar */
+            @extend %boton-custom;
+            display: inline-block;
+            padding: 0.5rem 1rem; /* Espaciado vertical y horizontal alrededor del texto */
+        }
+    }
+}
+
+/* ########################### */
+/* ######## CONSEJOS ######### */
+/* ########################### */
+.grid-consejos{
+    @include grid(1rem, 3fr 1fr);
+}
+
+.indice-consejos{
+    order: 2; /* a la derecha del contenido en paginas grandes */
+    padding: 1rem;
+    border-left: 4px solid color(button);
+    h3{
+        font-size: 1.25rem;
+        color: color(titles-text);
+        margin-bottom: 0.75rem;
+    }
+    ul{
+        list-style: none;
+        li{
+            margin-bottom: 0.5rem;
+            &:hover{
+                background-color: color(header-dropdown-hover);
+            }
+        }
+    }
+}
+
+.contenido-consejos{
+    padding: 1rem;
+    .card-title{
+        /* sobreescribimos el color que aplicó la tarjeta de bootstrap */
+        color: color(button-text);
+        margin: 0;
+        margin-bottom: 0.75rem;
+    }
+}
+
+/* truco para mantener proporcion 16:9 en videos */
+.marco-video{
+    aspect-ratio: 16 / 9;
+    max-width: 600px;
+    margin: 0 auto; /* centrado */
+    width: 100%;
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+
+/* ########################### */
+/* ######## NOSOTROS ######### */
+/* ########################### */
+.quienes-somos{
+    div {
+        @include flex(row, flex-start, center, 15px 50px, wrap);
+        padding: 15px;
+    }
+    img {
+        width: clamp(350px, 40%, 500px);
+        height: auto;
+    }
+    p {
+        font-size: 1.1rem;
+        display: inline-block;
+        width: clamp(350px, 40%, 500px);
+    }
+}
+
+.ubicacion-horarios div{
+    padding: 0 15px;
+}
+
+.mapa{
+    padding: 15px 0;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+}
+
+/* ########################### */
+/* ######## CONTACTO ######### */
+/* ########################### */
+
+/* Formulario Bootstrap */
+form .label-negrita {
+    font-weight: 700;
+}
+
+.form-check-input:checked {
+    background-color: color(button);
+    border-color: color(button);
+}

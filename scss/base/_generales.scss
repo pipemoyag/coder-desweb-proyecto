@@ -1,0 +1,71 @@
+/* ########################### */
+/* ######## GENERALES ######## */
+/* ########################### */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Eliminamos margin y padding que Bootstrap aplica a distintas etiquetas */
+ul,ol,p,h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Tipografia general */
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+/* Tipografia para titulos */
+h1,h2,h3,h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+/* Estilo para los h1 */
+h1 {
+    text-transform: uppercase;
+    color: color(titles-text);
+    font-size: 2.0rem;
+}
+
+/* Estilo para los h2 */
+h2 {
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: color(button);
+    color: color(button-text);
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    margin: 15px 0;
+    border-radius: 6px;
+}
+
+/* Quitamos subrayado y color por defecto a todos los hipervinculos */
+a {
+    text-decoration: none; /* saca el subrayado */
+    color: inherit; /* hereda color del elemento padre */
+}
+
+/* Invertimos color iconos negros, para que se vean blancos */
+.icono {
+    filter: brightness(0) saturate(100%) invert(1);
+}
+
+/* Flexbox para secciones del body */
+.layout {
+    @include flex(column);
+    min-height: 100vh; /* para asegurar que el layout siempre ocupe toda la altura */
+}
+
+/* Color y padding base para main de todas las paginas */
+main {
+    background-color: color(main);
+    color: color(main-text);
+    padding: 15px;
+    flex-grow: 1; /* que para usar todo el alto de la pantalla aumente el main */
+}

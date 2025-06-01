@@ -1,0 +1,68 @@
+/* ########################### */
+/* ######### HEADER ########## */
+/* #### NAVBAR BOOTSTRAP ##### */
+/* ########################### */
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo{
+    height: 60px;
+    width: auto;
+}
+
+.icono-lupa, .icono-carrito{
+    height: 20px;
+    width: auto;
+}
+
+.navbar{
+    background-color: color(header)!important;
+}
+
+/* Cambiamos color icono menu hamburguesa */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.nav-link{
+    font-weight: bold;
+    color: color(header-text);
+    transition: text-decoration 0.3s ease;
+    &:hover,
+    &:active{
+        color: color(header-text);
+        text-decoration: underline;
+    }
+}
+
+/* Mostrar dropdown al pasar el mouse */
+.nav-item.dropdown:hover{
+    .dropdown-menu {
+        display: block;
+        margin-top: 0; /* que no haya espacio entre el botón y el menú */
+    }
+}
+
+.btn-custom {
+    @extend %boton-custom;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: color(button-hover);
+    box-shadow: 0 0 0 .1rem color(button);
+}
+
+.dropdown-menu li a{
+    &:hover{
+        background-color: color(header-dropdown-hover);
+    }
+    &:active{
+        background-color: color(button);
+        color: color(button-text);
+    }
+}
