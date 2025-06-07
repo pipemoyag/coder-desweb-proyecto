@@ -31,9 +31,12 @@
     background-attachment: fixed;
     background-size: 90px;
     .producto{
-        transition: transform 0.3s ease;
+        transition: 0.3s ease;
         &:hover{
             transform: scale(1.05);
+            box-shadow: 10px 10px 35px -9px rgba(0,0,0,0.75);
+            -webkit-box-shadow: 10px 10px 35px -9px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 35px -9px rgba(0,0,0,0.75);
         }
     }
 }
@@ -58,12 +61,15 @@
         @include flex(column, space-between, center);
         padding: 10px;
         img {
-            width: 100%;
-            height: auto;
+            height: 180px; /* width - 2*padding tarjeta*/
+            width: auto;
         }
         h3 {
             font-size: 1.0rem;
             text-align: center;
+        }
+        p{
+            font-size: 1.1rem
         }
         a {
             /* "Botón" Comprar */
@@ -71,6 +77,25 @@
             display: inline-block;
             padding: 0.5rem 1rem; /* Espaciado vertical y horizontal alrededor del texto */
         }
+    }
+}
+
+.proximamente{
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: color(titles-text);
+    text-align: center;
+    border: 2px dashed color(header-text);
+    border-radius: 10px;
+    box-shadow: 10px 10px 30px 0px color(header-dropdown-hover);
+    -webkit-box-shadow: 10px 10px 30px 0px color(header-dropdown-hover);
+    -moz-box-shadow: 10px 10px 30px 0px color(header-dropdown-hover);
+    animation: parpadeo 1.5s infinite;
+
+    @keyframes parpadeo {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
     }
 }
 
@@ -127,24 +152,36 @@
 /* ########################### */
 /* ######## NOSOTROS ######### */
 /* ########################### */
+.nosotros h2{
+    display: block; /* cambia el inline-block original */
+    width: max-content;
+    margin: 15px auto; /* centrado */
+}
+
 .quienes-somos{
     div {
-        @include flex(row, flex-start, center, 15px 50px, wrap);
+        @include flex(row, center, center, 15px 50px, wrap);
         padding: 15px;
-    }
-    img {
-        width: clamp(350px, 40%, 500px);
-        height: auto;
-    }
-    p {
-        font-size: 1.1rem;
-        display: inline-block;
-        width: clamp(350px, 40%, 500px);
+        img {
+            width: clamp(350px, 40%, 500px);
+            height: auto;
+        }
+        p {
+            font-size: 1.1rem;
+            display: inline-block;
+            width: clamp(350px, 40%, 500px);
+        }
     }
 }
 
-.ubicacion-horarios div{
-    padding: 0 15px;
+.ubicacion-horarios{
+    div {
+        @include flex(column, center, center);
+        padding: 0 15px;
+        p{
+            font-size: 1.1rem;
+        }
+    }
 }
 
 .mapa{

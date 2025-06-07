@@ -3,7 +3,7 @@
 /* ########################### */
 
 @media screen and (max-width: 815px) {
-    .quienes-somos{
+    .quienes-somos div{
         img {
             width: 350px
         }
@@ -38,8 +38,10 @@
         font-size: 1.3rem;
     }
 
-    .quienes-somos p {
+    .quienes-somos,.ubicacion-horarios{
+        div p {
         font-size: 1.0rem;
+        }
     }
 }
 
@@ -48,7 +50,7 @@
         font-size: 1.1rem;
     }
 
-    .quienes-somos{
+    .quienes-somos div{
         img {
             min-width: 250px;
         }

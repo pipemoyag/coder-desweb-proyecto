@@ -8,7 +8,7 @@
   font-weight: bold;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: 0.3s ease;
 }
 .contenedor-productos .producto a:hover, .btn-custom:hover, .contenedor-productos .producto a:active, .btn-custom:active {
   background-color: #203233 !important;
@@ -178,10 +178,13 @@ header {
   background-size: 90px;
 }
 .contenedor-index .producto {
-  transition: transform 0.3s ease;
+  transition: 0.3s ease;
 }
 .contenedor-index .producto:hover {
   transform: scale(1.05);
+  box-shadow: 10px 10px 35px -9px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 35px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 35px -9px rgba(0, 0, 0, 0.75);
 }
 
 /* ########################### */
@@ -211,17 +214,42 @@ header {
   padding: 10px;
 }
 .contenedor-productos .producto img {
-  width: 100%;
-  height: auto;
+  height: 180px; /* width - 2*padding tarjeta*/
+  width: auto;
 }
 .contenedor-productos .producto h3 {
   font-size: 1rem;
   text-align: center;
 }
+.contenedor-productos .producto p {
+  font-size: 1.1rem;
+}
 .contenedor-productos .producto a {
   /* "Botón" Comprar */
   display: inline-block;
   padding: 0.5rem 1rem; /* Espaciado vertical y horizontal alrededor del texto */
+}
+
+.proximamente {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #3b5142;
+  text-align: center;
+  border: 2px dashed #203233;
+  border-radius: 10px;
+  box-shadow: 10px 10px 30px 0px #96b4a0;
+  -webkit-box-shadow: 10px 10px 30px 0px #96b4a0;
+  -moz-box-shadow: 10px 10px 30px 0px #96b4a0;
+  animation: parpadeo 1.5s infinite;
+}
+@keyframes parpadeo {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 /* ########################### */
@@ -279,27 +307,40 @@ header {
 /* ########################### */
 /* ######## NOSOTROS ######### */
 /* ########################### */
+.nosotros h2 {
+  display: block; /* cambia el inline-block original */
+  width: max-content;
+  margin: 15px auto; /* centrado */
+}
+
 .quienes-somos div {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 15px 50px;
   flex-wrap: wrap;
   padding: 15px;
 }
-.quienes-somos img {
+.quienes-somos div img {
   width: clamp(350px, 40%, 500px);
   height: auto;
 }
-.quienes-somos p {
+.quienes-somos div p {
   font-size: 1.1rem;
   display: inline-block;
   width: clamp(350px, 40%, 500px);
 }
 
 .ubicacion-horarios div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 0 15px;
+}
+.ubicacion-horarios div p {
+  font-size: 1.1rem;
 }
 
 .mapa {
@@ -367,10 +408,10 @@ footer h4 {
 /* ####### MEDIA QUERY ####### */
 /* ########################### */
 @media screen and (max-width: 815px) {
-  .quienes-somos img {
+  .quienes-somos div img {
     width: 350px;
   }
-  .quienes-somos p {
+  .quienes-somos div p {
     width: 80%;
   }
 }
@@ -394,7 +435,7 @@ footer h4 {
   h2 {
     font-size: 1.3rem;
   }
-  .quienes-somos p {
+  .quienes-somos div p, .ubicacion-horarios div p {
     font-size: 1rem;
   }
 }
@@ -402,10 +443,10 @@ footer h4 {
   h1, h2, .indice-consejos h3 {
     font-size: 1.1rem;
   }
-  .quienes-somos img {
+  .quienes-somos div img {
     min-width: 250px;
   }
-  .quienes-somos p {
+  .quienes-somos div p {
     width: 100%;
   }
   .contenido-consejos p {
