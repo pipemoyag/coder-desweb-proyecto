@@ -30,15 +30,6 @@
     background-repeat: repeat;
     background-attachment: fixed;
     background-size: 90px;
-    .producto{
-        transition: 0.3s ease;
-        &:hover{
-            transform: scale(1.05);
-            box-shadow: 10px 10px 35px -9px rgba(0,0,0,0.75);
-            -webkit-box-shadow: 10px 10px 35px -9px rgba(0,0,0,0.75);
-            -moz-box-shadow: 10px 10px 35px -9px rgba(0,0,0,0.75);
-        }
-    }
 }
 
 /* ########################### */
@@ -60,6 +51,13 @@
         height: 350px;
         @include flex(column, space-between, center);
         padding: 10px;
+        transition: 0.3s ease;
+        &:hover{
+            transform: scale(1.05);
+            box-shadow: 10px 10px 35px -9px rgba(0,0,0,0.75);
+            -webkit-box-shadow: 10px 10px 35px -9px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 35px -9px rgba(0,0,0,0.75);
+        }
         img {
             height: 180px; /* width - 2*padding tarjeta*/
             width: auto;
